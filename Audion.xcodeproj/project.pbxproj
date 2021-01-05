@@ -7,13 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30246F7F24DDB63E00CDCD4D /* OpenStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30246F7E24DDB63E00CDCD4D /* OpenStreamViewController.swift */; };
+		302BB1DE24E1A1C9007B102B /* AppearancePrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB1DC24E1A1C9007B102B /* AppearancePrefsViewController.swift */; };
 		30A32E19246D7EB800D8DC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A32E18246D7EB800D8DC1B /* AppDelegate.swift */; };
 		30A32E1B246D7EB800D8DC1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A32E1A246D7EB800D8DC1B /* ViewController.swift */; };
 		30A32E1D246D7EBC00D8DC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A32E1C246D7EBC00D8DC1B /* Assets.xcassets */; };
 		30A32E20246D7EBC00D8DC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A32E1E246D7EBC00D8DC1B /* Main.storyboard */; };
+		30A32E36246D830A00D8DC1B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A32E35246D830A00D8DC1B /* AVFoundation.framework */; };
+		30A32E37246D832000D8DC1B /* FaceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A32E2E246D82F100D8DC1B /* FaceKit.framework */; };
+		30A32E38246D832000D8DC1B /* FaceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30A32E2E246D82F100D8DC1B /* FaceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30A32E3B246D86AF00D8DC1B /* AudionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A32E3A246D86AF00D8DC1B /* AudionWindow.swift */; };
+		30A32E3D246D88ED00D8DC1B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A32E3C246D88ED00D8DC1B /* Player.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		30A32E2D246D82F100D8DC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30A32E28246D82F100D8DC1B /* FaceKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 30CAB8B42463AB05004BD5DD;
+			remoteInfo = FaceKit;
+		};
+		30A32E2F246D82F100D8DC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30A32E28246D82F100D8DC1B /* FaceKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 30D1ABE72465E08A00CF50C6;
+			remoteInfo = FaceKitTestApp;
+		};
+		30A32E31246D830000D8DC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30A32E28246D82F100D8DC1B /* FaceKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 30CAB8B32463AB05004BD5DD;
+			remoteInfo = FaceKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30A32E39246D832000D8DC1B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				30A32E38246D832000D8DC1B /* FaceKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		30246F7E24DDB63E00CDCD4D /* OpenStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenStreamViewController.swift; sourceTree = "<group>"; };
+		302BB1DC24E1A1C9007B102B /* AppearancePrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePrefsViewController.swift; sourceTree = "<group>"; };
 		30A32E15246D7EB800D8DC1B /* Audion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A32E18246D7EB800D8DC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30A32E1A246D7EB800D8DC1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +68,10 @@
 		30A32E1F246D7EBC00D8DC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30A32E21246D7EBC00D8DC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A32E22246D7EBC00D8DC1B /* Audion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Audion.entitlements; sourceTree = "<group>"; };
+		30A32E28246D82F100D8DC1B /* FaceKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FaceKit.xcodeproj; path = FaceKit/FaceKit.xcodeproj; sourceTree = "<group>"; };
+		30A32E35246D830A00D8DC1B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		30A32E3A246D86AF00D8DC1B /* AudionWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudionWindow.swift; sourceTree = "<group>"; };
+		30A32E3C246D88ED00D8DC1B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A32E37246D832000D8DC1B /* FaceKit.framework in Frameworks */,
+				30A32E36246D830A00D8DC1B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,8 +90,10 @@
 		30A32E0C246D7EB800D8DC1B = {
 			isa = PBXGroup;
 			children = (
+				30A32E28246D82F100D8DC1B /* FaceKit.xcodeproj */,
 				30A32E17246D7EB800D8DC1B /* Audion */,
 				30A32E16246D7EB800D8DC1B /* Products */,
+				30A32E33246D830500D8DC1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,13 +109,34 @@
 			isa = PBXGroup;
 			children = (
 				30A32E18246D7EB800D8DC1B /* AppDelegate.swift */,
-				30A32E1A246D7EB800D8DC1B /* ViewController.swift */,
+				302BB1DC24E1A1C9007B102B /* AppearancePrefsViewController.swift */,
 				30A32E1C246D7EBC00D8DC1B /* Assets.xcassets */,
-				30A32E1E246D7EBC00D8DC1B /* Main.storyboard */,
-				30A32E21246D7EBC00D8DC1B /* Info.plist */,
 				30A32E22246D7EBC00D8DC1B /* Audion.entitlements */,
+				30A32E3A246D86AF00D8DC1B /* AudionWindow.swift */,
+				30A32E21246D7EBC00D8DC1B /* Info.plist */,
+				30A32E1E246D7EBC00D8DC1B /* Main.storyboard */,
+				30246F7E24DDB63E00CDCD4D /* OpenStreamViewController.swift */,
+				30A32E3C246D88ED00D8DC1B /* Player.swift */,
+				30A32E1A246D7EB800D8DC1B /* ViewController.swift */,
 			);
 			path = Audion;
+			sourceTree = "<group>";
+		};
+		30A32E29246D82F100D8DC1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30A32E2E246D82F100D8DC1B /* FaceKit.framework */,
+				30A32E30246D82F100D8DC1B /* FaceKitTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30A32E33246D830500D8DC1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30A32E35246D830A00D8DC1B /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,10 +149,12 @@
 				30A32E11246D7EB800D8DC1B /* Sources */,
 				30A32E12246D7EB800D8DC1B /* Frameworks */,
 				30A32E13246D7EB800D8DC1B /* Resources */,
+				30A32E39246D832000D8DC1B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				30A32E32246D830000D8DC1B /* PBXTargetDependency */,
 			);
 			name = Audion;
 			productName = Audion;
@@ -90,7 +168,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Panic;
 				TargetAttributes = {
 					30A32E14246D7EB800D8DC1B = {
@@ -109,12 +187,35 @@
 			mainGroup = 30A32E0C246D7EB800D8DC1B;
 			productRefGroup = 30A32E16246D7EB800D8DC1B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 30A32E29246D82F100D8DC1B /* Products */;
+					ProjectRef = 30A32E28246D82F100D8DC1B /* FaceKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				30A32E14246D7EB800D8DC1B /* Audion */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		30A32E2E246D82F100D8DC1B /* FaceKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FaceKit.framework;
+			remoteRef = 30A32E2D246D82F100D8DC1B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		30A32E30246D82F100D8DC1B /* FaceKitTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = FaceKitTestApp.app;
+			remoteRef = 30A32E2F246D82F100D8DC1B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		30A32E13246D7EB800D8DC1B /* Resources */ = {
@@ -133,12 +234,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A32E3D246D88ED00D8DC1B /* Player.swift in Sources */,
 				30A32E1B246D7EB800D8DC1B /* ViewController.swift in Sources */,
+				30A32E3B246D86AF00D8DC1B /* AudionWindow.swift in Sources */,
 				30A32E19246D7EB800D8DC1B /* AppDelegate.swift in Sources */,
+				30246F7F24DDB63E00CDCD4D /* OpenStreamViewController.swift in Sources */,
+				302BB1DE24E1A1C9007B102B /* AppearancePrefsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30A32E32246D830000D8DC1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FaceKit;
+			targetProxy = 30A32E31246D830000D8DC1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		30A32E1E246D7EBC00D8DC1B /* Main.storyboard */ = {
@@ -178,6 +291,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -238,6 +352,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -270,7 +385,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Audion/Audion.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VE8FC488U5;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -279,8 +395,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.panic.Audion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -290,7 +408,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Audion/Audion.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VE8FC488U5;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -299,8 +418,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.panic.Audion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

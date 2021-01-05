@@ -1,0 +1,3 @@
+[submodule "FaceKit"]
+	path = FaceKit
+	url = https://dev.panic.com/panic/facekit.git

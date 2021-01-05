@@ -1,16 +1,19 @@
 {
   "images" : [
     {
+      "filename" : "Audion16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
+      "filename" : "Audion32-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
+      "filename" : "Audion32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
@@ -21,6 +24,7 @@
       "size" : "32x32"
     },
     {
+      "filename" : "Audion128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
