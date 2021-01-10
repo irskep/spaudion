@@ -25,58 +25,17 @@ import FaceKit
 import Security
 import Logging
 
-class Services {
-  static let shared = Services()
+enum SpaudionError: Error {
+  case meaningless
+}
 
+class SpotifyPlayer: NSObject {
   lazy var spotify = SpotifyAPI(
     authorizationManager: AuthorizationCodeFlowManager(
       clientId: SpotifyCredentials.clientId,
       clientSecret: SpotifyCredentials.clientSecret))
 
   let keychain = KeychainSwift(keyPrefix: "com.steveasleep.Spaudion")
-}
-
-class PlaybackState {
-  @Published
-  var itemURI: SpotifyURIConvertible? = nil
-
-  @Published
-  var isPlaying = false
-
-  @Published
-  var songName = ""
-
-  @Published
-  var songArtist = ""
-
-  @Published
-  var songAlbum = ""
-
-  @Published
-  var volume: Double = 0
-
-  @Published
-  var duration: Double = 0
-
-  @Published
-  var progress: Double = 0
-
-  @Published
-  var isAuthorized = false
-}
-
-enum AvdiumError: Error {
-  case meaningless
-}
-
-extension Track {
-  var artistNames: String? { artists?.map { $0.name}.joined(separator: ", ") }
-}
-
-class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
-  let supportsStop = false
-  let supportsRewind = true
-  let supportsFastForward = true
 
   var faceView: AudionFaceView? = nil
 
@@ -93,14 +52,12 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
     self?.refresh()
   })
 
-  private var spotify: SpotifyAPI<AuthorizationCodeFlowManager> { Services.shared.spotify }
-  private var keychain: KeychainSwift { Services.shared.keychain }
 
   lazy var trackPublisher: AnyPublisher<AnyPublisher<Track?, Error>, Never> = { self.playbackState.$itemURI
     .removeDuplicates(by: { $0?.uri == $1?.uri })
     .map { [weak self] (maybeURI: SpotifyURIConvertible?) -> AnyPublisher<Track?, Error> in
       guard let self = self, let uri = maybeURI else {
-        return Just<Track?>(nil).mapError({ _ in AvdiumError.meaningless }).eraseToAnyPublisher()
+        return Just<Track?>(nil).mapError({ _ in SpaudionError.meaningless }).eraseToAnyPublisher()
       }
       return self.spotify.track(uri).map({ $0 }).eraseToAnyPublisher()
     }
@@ -132,11 +89,9 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
           .receive(on: RunLoop.main)
           .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] track in
             guard let self = self else { return }
-            print("Request track")
             self.playbackState.songName = track?.name ?? ""
-            self.playbackState.songArtist = track?.artistNames ?? ""
+            self.playbackState.songArtist = (track?.artists?.map { $0.name } ?? []).joined(separator: ", ")
             self.playbackState.songAlbum = track?.album?.name ?? ""
-            print(self.playbackState.songName, "-", self.playbackState.songAlbum)
           })
           .store(in: &self.cancellables)
       }
@@ -182,11 +137,9 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
 
     // MARK: Auth
 
-    print("Subscribing to auth updates")
     spotify.authorizationManagerDidChange
       .receive(on: RunLoop.main)
       .sink { [weak self] in
-        print("Auth updated")
         guard let self = self else { return }
         self.playbackState.isAuthorized = self.spotify.authorizationManager.isAuthorized()
 
@@ -197,7 +150,7 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
           )
 
           // Save the data to the keychain.
-          self.keychain.set(authManagerData, forKey: "auth")
+          self.keychain.set(authManagerData, forKey: Constants.keychainAuth)
 
           self.refresh()
         } catch {
@@ -206,25 +159,22 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
       }
       .store(in: &cancellables)
 
-    print("Subscribing to deauth updates")
     spotify.authorizationManagerDidDeauthorize
       .receive(on: RunLoop.main)
       .sink { [weak self] in
         guard let self = self else { return }
         self.playbackState.isAuthorized = false
-        self.keychain.delete("auth")
+        self.keychain.delete(Constants.keychainAuth)
       }
       .store(in: &cancellables)
 
-    print("Trying to load auth data")
-    if let authManagerData = keychain.getData("auth") {
+    if let authManagerData = keychain.getData(Constants.keychainAuth) {
       do {
         // Try to decode the data.
         let authorizationManager = try JSONDecoder().decode(
           AuthorizationCodeFlowManager.self,
           from: authManagerData
         )
-        print("found authorization information in keychain")
 
         spotify.authorizationManager = authorizationManager
 
@@ -232,7 +182,6 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
         print(error)
       }
     } else {
-      print("Logging in via browser")
       let url = spotify.authorizationManager.makeAuthorizationURL(
         redirectURI: URL(string: "com.steveasleep.spaudion://callback")!,
         showDialog: false,
@@ -249,7 +198,6 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
   }
 
   private func handleURL(_ url: URL) {
-    print("Handling URL", url)
     spotify.authorizationManager.requestAccessAndRefreshTokens(redirectURIWithQuery: url)
       .receive(on: RunLoop.main)
       .sink(
@@ -258,10 +206,6 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
         },
         receiveValue: { })
       .store(in: &cancellables)
-  }
-
-  func fallbackBehavior() {
-
   }
 
   func refresh() {
@@ -287,8 +231,6 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
       if !isScrubbing {
         faceView?.play()
       }
-    } else {
-      fallbackBehavior()
     }
   }
 
@@ -333,8 +275,12 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
     faceView?.volume = preMuteVolume / 100
     spotify.setVolume(to: Int(preMuteVolume)).sink(receiveCompletion: { _ in }).store(in: &cancellables)
   }
+}
 
-  // MARK: - faceViewDelegate Methods
+extension SpotifyPlayer: AudionFaceViewDelegate {
+  var supportsStop: Bool { false }
+  var supportsRewind: Bool { true }
+  var supportsFastForward: Bool { true }
 
   func play(_ sender: AudionFaceView) {
     play()
@@ -368,7 +314,7 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
     }
 
     spotify.setVolume(to: Int(volume * 100)).sink(receiveCompletion: { _ in }).store(in: &cancellables)
-    UserDefaults.standard.set(Float(volume * 100), forKey: AudionVolumePrefKey)
+    UserDefaults.standard.set(Float(volume * 100), forKey: Constants.audionVolumePrefKey)
   }
 
   func playTimeChanged(to time: Double, sender: AudionFaceView) {

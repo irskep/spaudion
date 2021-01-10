@@ -38,7 +38,7 @@ class ViewController: NSViewController, NSUserInterfaceValidations {
     let faceView = AudionFaceView(draggable: true, delegate: player)
     faceView.enableAllButtons = true
     faceView.face = AudionFace.default
-    faceView.volume = UserDefaults.standard.double(forKey: AudionVolumePrefKey)
+    faceView.volume = UserDefaults.standard.double(forKey: Constants.audionVolumePrefKey)
     player.faceView = faceView
 
     let view = self.view

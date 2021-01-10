@@ -386,7 +386,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Avdion" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Spaudion" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -396,7 +396,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Audion" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="AudionWindow" customModule="Avdion" customModuleProvider="target">
+                    <window key="window" title="Audion" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="AudionWindow" customModule="Spaudion" customModuleProvider="target">
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -415,7 +415,7 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Avdion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Spaudion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -454,7 +454,7 @@
         <!--Appearance-->
         <scene sceneID="V4h-wZ-vDH">
             <objects>
-                <viewController title="Appearance" storyboardIdentifier="AppearancePrefPane" id="sLJ-0e-pOC" customClass="AppearancePrefsViewController" customModule="Avdion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Appearance" storyboardIdentifier="AppearancePrefPane" id="sLJ-0e-pOC" customClass="AppearancePrefsViewController" customModule="Spaudion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="MXo-i7-BJm">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="293"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -568,7 +568,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VvB-6J-i0v" customClass="ClickableTextField" customModule="Avdion" customModuleProvider="target">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VvB-6J-i0v" customClass="ClickableTextField" customModule="Spaudion" customModuleProvider="target">
                                 <rect key="frame" x="110" y="59" width="246" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" allowsEditingTextAttributes="YES" id="Sj1-IV-iyk">
                                     <font key="font" metaFont="system"/>
