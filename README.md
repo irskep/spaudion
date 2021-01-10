@@ -2,6 +2,8 @@
 
 This is a fork of [Audion](https://dev.panic.com/panic/audion) that replaces the file player with a very basic Spotify controllers. It supports pause, play, skip forward/back, and volume control. Right now it's just a one-day hack, so it probably doesn't use the Spotify API very responsibly.
 
+The app reports its name as Avdion because I renamed the project 5 minutes before publishing this git repo. Send me a PR and fix it? 😅
+
 To run, create `Audion/SpotifyCredentials.swift` like this:
 
 ```swift
