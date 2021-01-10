@@ -22,3 +22,4 @@ TransmitDisk/osxfuse-lib
 TransmitDisk/OSXFUSE.framework
 TransmitDisk/OSXFUSE.framework.dSYM
 TransmitDisk/transmitdisk.fs
+Audion/SpotifyCredentials.swift

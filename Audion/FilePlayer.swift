@@ -23,7 +23,7 @@ import FaceKit
 
 let AudionVolumePrefKey = "volume"
 
-class Player: NSObject, AudionFaceViewDelegate {
+class FilePlayer: NSObject, AudionFaceViewDelegate {
     let supportsStop = true
     let supportsRewind = true
     let supportsFastForward = true

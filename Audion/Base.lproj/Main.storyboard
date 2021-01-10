@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17132"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,29 +64,6 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
-                                            <connections>
-                                                <action selector="openDocument:" target="Ady-hI-5gd" id="bVn-NM-KNZ"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Open Stream…" keyEquivalent="O" id="ZUD-t4-L65">
-                                            <connections>
-                                                <action selector="openStream:" target="Ady-hI-5gd" id="Vdz-KW-odD"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Open Recent" id="tXI-mr-wws">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="oas-Oc-fiZ">
-                                                <items>
-                                                    <menuItem title="Clear Menu" id="vNY-rz-j42">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="clearRecentDocuments:" target="Ady-hI-5gd" id="Daa-9d-B3U"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                </items>
-                                            </menu>
-                                        </menuItem>
                                         <menuItem title="Close" keyEquivalent="w" id="MNK-yR-8ZG">
                                             <connections>
                                                 <action selector="performClose:" target="Ady-hI-5gd" id="n3J-rW-Dtc"/>
@@ -409,7 +386,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Audion" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Avdion" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -419,7 +396,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Audion" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="AudionWindow" customModule="Audion" customModuleProvider="target">
+                    <window key="window" title="Audion" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="AudionWindow" customModule="Avdion" customModuleProvider="target">
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -438,7 +415,7 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Audion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Avdion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -474,89 +451,10 @@
             </objects>
             <point key="canvasLocation" x="80" y="1002"/>
         </scene>
-        <!--Open Stream View Controller-->
-        <scene sceneID="ysa-TI-8T0">
-            <objects>
-                <viewController storyboardIdentifier="OpenStreamSheet" id="huT-jf-kCi" customClass="OpenStreamViewController" customModule="Audion" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="bcB-XW-Gce">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="114"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wAF-Wb-csA">
-                                <rect key="frame" x="18" y="78" width="144" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="URL of stream to open:" id="yOE-eU-xpK">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lLh-Ef-NLH">
-                                <rect key="frame" x="20" y="49" width="320" height="21"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="15h-BR-3Vb">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <outlet property="delegate" destination="huT-jf-kCi" id="efE-CV-2ip"/>
-                                </connections>
-                            </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vNM-GU-2wO">
-                                <rect key="frame" x="264" y="13" width="82" height="32"/>
-                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cKA-3z-2La">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="ok:" target="huT-jf-kCi" id="VaW-fQ-tCC"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ih2-24-HsC">
-                                <rect key="frame" x="182" y="13" width="82" height="32"/>
-                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XdH-NP-Xge">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="cancel:" target="huT-jf-kCi" id="43r-Km-jhx"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wAF-Wb-csA" secondAttribute="trailing" constant="20" id="4CW-r3-Po6"/>
-                            <constraint firstItem="lLh-Ef-NLH" firstAttribute="leading" secondItem="bcB-XW-Gce" secondAttribute="leading" constant="20" id="9Bg-Fr-bfX"/>
-                            <constraint firstItem="ih2-24-HsC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bcB-XW-Gce" secondAttribute="leading" constant="20" id="9Ti-aP-90s"/>
-                            <constraint firstItem="lLh-Ef-NLH" firstAttribute="top" secondItem="wAF-Wb-csA" secondAttribute="bottom" constant="8" id="FGr-qD-eky"/>
-                            <constraint firstItem="vNM-GU-2wO" firstAttribute="width" secondItem="ih2-24-HsC" secondAttribute="width" id="GuD-DF-oLM"/>
-                            <constraint firstItem="vNM-GU-2wO" firstAttribute="top" secondItem="lLh-Ef-NLH" secondAttribute="bottom" constant="8" id="HiW-dN-U4b"/>
-                            <constraint firstItem="wAF-Wb-csA" firstAttribute="top" secondItem="bcB-XW-Gce" secondAttribute="top" constant="20" id="Isc-9u-haP"/>
-                            <constraint firstItem="vNM-GU-2wO" firstAttribute="leading" secondItem="ih2-24-HsC" secondAttribute="trailing" constant="12" id="MNj-JJ-KX9"/>
-                            <constraint firstItem="wAF-Wb-csA" firstAttribute="leading" secondItem="bcB-XW-Gce" secondAttribute="leading" constant="20" id="WIz-gJ-Ek8"/>
-                            <constraint firstAttribute="trailing" secondItem="lLh-Ef-NLH" secondAttribute="trailing" constant="20" id="WU1-dR-Dni"/>
-                            <constraint firstAttribute="bottom" secondItem="vNM-GU-2wO" secondAttribute="bottom" constant="20" id="Zh0-Hh-I1w"/>
-                            <constraint firstItem="ih2-24-HsC" firstAttribute="firstBaseline" secondItem="vNM-GU-2wO" secondAttribute="firstBaseline" id="es9-n1-Cg8"/>
-                            <constraint firstAttribute="trailing" secondItem="vNM-GU-2wO" secondAttribute="trailing" constant="20" id="fks-Ft-IqK"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="okButton" destination="vNM-GU-2wO" id="4KS-lH-Ito"/>
-                        <outlet property="textField" destination="lLh-Ef-NLH" id="3Mg-tF-c6F"/>
-                    </connections>
-                </viewController>
-                <customObject id="cdz-ir-fZK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="709" y="168"/>
-        </scene>
         <!--Appearance-->
         <scene sceneID="V4h-wZ-vDH">
             <objects>
-                <viewController title="Appearance" storyboardIdentifier="AppearancePrefPane" id="sLJ-0e-pOC" customClass="AppearancePrefsViewController" customModule="Audion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Appearance" storyboardIdentifier="AppearancePrefPane" id="sLJ-0e-pOC" customClass="AppearancePrefsViewController" customModule="Avdion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="MXo-i7-BJm">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="293"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -670,7 +568,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VvB-6J-i0v" customClass="ClickableTextField" customModule="Audion" customModuleProvider="target">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VvB-6J-i0v" customClass="ClickableTextField" customModule="Avdion" customModuleProvider="target">
                                 <rect key="frame" x="110" y="59" width="246" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" allowsEditingTextAttributes="YES" id="Sj1-IV-iyk">
                                     <font key="font" metaFont="system"/>
