@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "30A32E14246D7EB800D8DC1B"
-               BuildableName = "Avdion.app"
-               BlueprintName = "Avdion"
+               BuildableName = "Spaudion.app"
+               BlueprintName = "Spaudion"
                ReferencedContainer = "container:Audion.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "30A32E14246D7EB800D8DC1B"
-            BuildableName = "Avdion.app"
-            BlueprintName = "Avdion"
+            BuildableName = "Spaudion.app"
+            BlueprintName = "Spaudion"
             ReferencedContainer = "container:Audion.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "30A32E14246D7EB800D8DC1B"
-            BuildableName = "Avdion.app"
-            BlueprintName = "Avdion"
+            BuildableName = "Spaudion.app"
+            BlueprintName = "Spaudion"
             ReferencedContainer = "container:Audion.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

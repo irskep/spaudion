@@ -14,9 +14,9 @@
 		30A32E20246D7EBC00D8DC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A32E1E246D7EBC00D8DC1B /* Main.storyboard */; };
 		30A32E36246D830A00D8DC1B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A32E35246D830A00D8DC1B /* AVFoundation.framework */; };
 		30A32E37246D832000D8DC1B /* FaceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A32E2E246D82F100D8DC1B /* FaceKit.framework */; };
-		30A32E38246D832000D8DC1B /* FaceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30A32E2E246D82F100D8DC1B /* FaceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		30A32E3B246D86AF00D8DC1B /* AudionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A32E3A246D86AF00D8DC1B /* AudionWindow.swift */; };
 		30A32E3D246D88ED00D8DC1B /* FilePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A32E3C246D88ED00D8DC1B /* FilePlayer.swift */; };
+		AA30AF7A25AACCAB0008B92A /* FaceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30A32E2E246D82F100D8DC1B /* FaceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA79843925AA6E5500A10CB9 /* SpotifyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = AA79843825AA6E5500A10CB9 /* SpotifyAPI */; };
 		AA79843C25AA6E7600A10CB9 /* SpotifyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79843B25AA6E7600A10CB9 /* SpotifyPlayer.swift */; };
 		AA79844225AA82AF00A10CB9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA79844125AA82AF00A10CB9 /* KeychainSwift */; };
@@ -54,7 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				30A32E38246D832000D8DC1B /* FaceKit.framework in Embed Frameworks */,
+				AA30AF7A25AACCAB0008B92A /* FaceKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +63,7 @@
 
 /* Begin PBXFileReference section */
 		302BB1DC24E1A1C9007B102B /* AppearancePrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePrefsViewController.swift; sourceTree = "<group>"; };
-		30A32E15246D7EB800D8DC1B /* Avdion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avdion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30A32E15246D7EB800D8DC1B /* Spaudion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spaudion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A32E18246D7EB800D8DC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30A32E1A246D7EB800D8DC1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		30A32E1C246D7EBC00D8DC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		30A32E16246D7EB800D8DC1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30A32E15246D7EB800D8DC1B /* Avdion.app */,
+				30A32E15246D7EB800D8DC1B /* Spaudion.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		30A32E14246D7EB800D8DC1B /* Avdion */ = {
+		30A32E14246D7EB800D8DC1B /* Spaudion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30A32E25246D7EBC00D8DC1B /* Build configuration list for PBXNativeTarget "Avdion" */;
+			buildConfigurationList = 30A32E25246D7EBC00D8DC1B /* Build configuration list for PBXNativeTarget "Spaudion" */;
 			buildPhases = (
 				30A32E11246D7EB800D8DC1B /* Sources */,
 				30A32E12246D7EB800D8DC1B /* Frameworks */,
@@ -163,13 +163,13 @@
 			dependencies = (
 				30A32E32246D830000D8DC1B /* PBXTargetDependency */,
 			);
-			name = Avdion;
+			name = Spaudion;
 			packageProductDependencies = (
 				AA79843825AA6E5500A10CB9 /* SpotifyAPI */,
 				AA79844125AA82AF00A10CB9 /* KeychainSwift */,
 			);
 			productName = Audion;
-			productReference = 30A32E15246D7EB800D8DC1B /* Avdion.app */;
+			productReference = 30A32E15246D7EB800D8DC1B /* Spaudion.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				30A32E14246D7EB800D8DC1B /* Avdion */,
+				30A32E14246D7EB800D8DC1B /* Spaudion */,
 			);
 		};
 /* End PBXProject section */
@@ -454,7 +454,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		30A32E25246D7EBC00D8DC1B /* Build configuration list for PBXNativeTarget "Avdion" */ = {
+		30A32E25246D7EBC00D8DC1B /* Build configuration list for PBXNativeTarget "Spaudion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30A32E26246D7EBC00D8DC1B /* Debug */,

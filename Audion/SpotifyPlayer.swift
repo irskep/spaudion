@@ -23,6 +23,7 @@ import Combine
 import Cocoa
 import FaceKit
 import Security
+import Logging
 
 class Services {
   static let shared = Services()
@@ -81,6 +82,8 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
 
   var isPlaying: Bool { playbackState.isPlaying }
   var isScrubbing = false
+
+  let logger = Logger(label: "SpotifyPlayer")
 
   private var cancellables = Set<AnyCancellable>()
 
@@ -167,6 +170,7 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
       .sink { [weak self] in self?.faceView?.volume = $0 / 100 }
       .store(in: &cancellables)
     playbackState.$duration
+      .removeDuplicates()
       .sink { [weak self] in self?.faceView?.durationInSeconds = Int($0) }
       .store(in: &cancellables)
     playbackState.$progress
@@ -326,7 +330,7 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
 
   func unMute() {
     isMuted = false
-    faceView?.volume = preMuteVolume
+    faceView?.volume = preMuteVolume / 100
     spotify.setVolume(to: Int(preMuteVolume)).sink(receiveCompletion: { _ in }).store(in: &cancellables)
   }
 
