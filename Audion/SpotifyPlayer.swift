@@ -32,7 +32,7 @@ class Services {
       clientId: SpotifyCredentials.clientId,
       clientSecret: SpotifyCredentials.clientSecret))
 
-  let keychain = KeychainSwift(keyPrefix: "com.steveasleep.Avdion")
+  let keychain = KeychainSwift(keyPrefix: "com.steveasleep.Spaudion")
 }
 
 class PlaybackState {
@@ -229,7 +229,7 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
     } else {
       print("Logging in via browser")
       let url = spotify.authorizationManager.makeAuthorizationURL(
-        redirectURI: URL(string: "com.steveasleep.avdion://callback")!,
+        redirectURI: URL(string: "com.steveasleep.spaudion://callback")!,
         showDialog: false,
         scopes: [
           //        .appRemoteControl,
