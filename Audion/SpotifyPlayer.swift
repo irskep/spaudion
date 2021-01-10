@@ -129,6 +129,7 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
           .receive(on: RunLoop.main)
           .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] track in
             guard let self = self else { return }
+            print("Request track")
             self.playbackState.songName = track?.name ?? ""
             self.playbackState.songArtist = track?.artistNames ?? ""
             self.playbackState.songAlbum = track?.album?.name ?? ""
@@ -260,7 +261,6 @@ class SpotifyPlayer: NSObject, AudionFaceViewDelegate {
   }
 
   func refresh() {
-    print("Start refresh")
     spotify.currentPlayback()
       .receive(on: RunLoop.main)
       .sink(receiveCompletion: { _ in }, receiveValue: {
